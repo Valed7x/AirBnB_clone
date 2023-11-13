@@ -50,7 +50,8 @@ class TestAmenity(unittest.TestCase):
 
     def test_str_amenity(self):
         """
-        Checks if the str method does its
+        Checks if the str method does it.
+
         thing properly.
         """
         amenity_instance = Amenity()
@@ -61,6 +62,7 @@ class TestAmenity(unittest.TestCase):
     def test_to_dict_values_amenity(self):
         """
         Makes sure the values in the dict returned
+
         from to_dict are on point.
         """
         t_format = "%Y-%m-%dT%H:%M:%S.%f"
@@ -91,6 +93,7 @@ class TestAmenity(unittest.TestCase):
     def test_name_attr_amenity(self):
         """
         Ensures Amenity has the 'name' attribute,
+
         and it's an empty string
         """
         amenity_instance = Amenity()
@@ -114,7 +117,8 @@ class TestAmenity(unittest.TestCase):
 
 class TestAmenityDocs(unittest.TestCase):
     """
-    Tests to make sure the documentation and
+    Tests to make sure the documentation and.
+
     style of Amenity class are on point.
     """
 
@@ -128,7 +132,8 @@ class TestAmenityDocs(unittest.TestCase):
 
     def test_amenity_func_docstrings_amenity(self):
         """
-        Checking if Amenity methods have
+        Checking if Amenity methods have.
+
         the right amount of swag in their docstrings
         """
         for func in self.amenity_functions:
@@ -150,7 +155,8 @@ class TestAmenityDocs(unittest.TestCase):
 
     def test_amenity_module_docstring_amenity(self):
         """
-        Making sure amenity.py module is not missing
+        Making sure amenity.py module is not missing.
+
         out on the docstring fun
         """
         self.assertIsNot(amenity.__doc__, None,

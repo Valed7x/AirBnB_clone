@@ -109,7 +109,8 @@ class TestPlace(unittest.TestCase):
 
 class TestPlaceDocs(unittest.TestCase):
     """
-    Tests to make sure the documentation and style
+    Tests to make sure the documentation and style.
+
     of Place class are on point
     """
 
@@ -123,7 +124,8 @@ class TestPlaceDocs(unittest.TestCase):
 
     def test_place_func_docstrings(self):
         """
-        Checking if Place methods have the right
+        Checking if Place methods have the right.
+
         amount of swag in their docstrings
         """
         for func in self.place_functions:
@@ -146,6 +148,7 @@ class TestPlaceDocs(unittest.TestCase):
     def test_place_module_docstring(self):
         """
         Making sure place.py module is not missing out
+
         on the docstring fun
         """
         self.assertIsNot(place.__doc__, None,

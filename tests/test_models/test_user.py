@@ -124,6 +124,7 @@ class TestUser(unittest.TestCase):
 class TestUserDocs(unittest.TestCase):
     """
     Tests to make sure the documentation and style of
+
     User class are on point
     """
 
@@ -137,6 +138,7 @@ class TestUserDocs(unittest.TestCase):
     def test_user_func_docstrings(self):
         """
         Checking if User methods have the right amount
+
         of swag in their docstrings
         """
         for func in self.user_functions:
@@ -159,6 +161,7 @@ class TestUserDocs(unittest.TestCase):
     def test_user_module_docstring(self):
         """
         Making sure user.py module is not missing out on
+
         the docstring fun
         """
         self.assertIsNot(user.__doc__, None,

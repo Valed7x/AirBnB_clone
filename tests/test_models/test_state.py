@@ -61,6 +61,7 @@ class TestState(unittest.TestCase):
     def test_name_attr(self):
         """
         Checking if State rocks the 'name' attribute,
+
         and it's an empty string
         """
         state_instance = State()
@@ -84,7 +85,8 @@ class TestState(unittest.TestCase):
 
 class TestStateDocs(unittest.TestCase):
     """
-    Tests to make sure the documentation and style
+    Tests to make sure the documentation and style.
+
     of State class are on point
     """
 
@@ -98,7 +100,8 @@ class TestStateDocs(unittest.TestCase):
 
     def test_state_func_docstrings(self):
         """
-        Checking if State methods have the right
+        Checking if State methods have the right.
+
         amount of swag in their docstrings
         """
         for func in self.state_functions:
@@ -111,7 +114,7 @@ class TestStateDocs(unittest.TestCase):
 
     def test_state_class_docstring(self):
         """
-        Ensuring State class has a proper docstring
+        Ensuring State class has a proper docstring.
         """
         self.assertIsNot(State.__doc__, None,
                          "State class needs a docstring, my friend!")
@@ -121,6 +124,7 @@ class TestStateDocs(unittest.TestCase):
     def test_state_module_docstring(self):
         """
         Making sure state.py module is not missing out
+
         on the docstring fun
         """
         self.assertIsNot(state.__doc__, None,
