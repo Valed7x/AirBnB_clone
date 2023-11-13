@@ -13,7 +13,6 @@ from models.review import Review
 classes = {"BaseModel": BaseModel, "User": User, "State": State,
            "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
 
-
 class FileStorage:
     """"""
     def __init__(self):
