@@ -1,59 +1,26 @@
 #!/usr/bin/python3
-"""
-Test script for the BaseModel class.
-"""
-
-import unittest
 from models.base_model import BaseModel
-from datetime import datetime
 
-class TestBaseModel(unittest.TestCase):
-    """Test cases for the BaseModel class."""
+my_model = BaseModel()
+my_model.name = "My First Model"
+my_model.my_number = 89
+print(my_model)
+my_model.save()
+print(my_model)
+my_model_json = my_model.to_dict()
+print(my_model_json)
+print("JSON of my_model:")
+for key in my_model_json.keys():
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
 
-    def setUp(self):
-        """Set up a BaseModel instance for testing."""
-        self.model = BaseModel()
-
-    def test_init_no_args(self):
-        """Test the initialization of BaseModel without arguments."""
-        self.assertIsInstance(self.model, BaseModel)
-        self.assertTrue(hasattr(self.model, 'id'))
-        self.assertTrue(hasattr(self.model, 'created_at'))
-        self.assertTrue(hasattr(self.model, 'updated_at'))
-
-    def test_init_with_args(self):
-        """Test the initialization of BaseModel with arguments."""
-        data = {
-            'id': 'test_id',
-            'created_at': '2023-01-01T00:00:00.000000',
-            'updated_at': '2023-01-02T00:00:00.000000'
-        }
-        model_with_args = BaseModel(**data)
-
-        self.assertEqual(model_with_args.id, data['id'])
-        self.assertEqual(model_with_args.created_at, datetime.strptime(data['created_at'], "%Y-%m-%dT%H:%M:%S.%f"))
-        self.assertEqual(model_with_args.updated_at, datetime.strptime(data['updated_at'], "%Y-%m-%dT%H:%M:%S.%f"))
-
-    def test_str_representation(self):
-        """Test the string representation of BaseModel."""
-        expected_str = f"[{self.model.__class__.__name__}] ({self.model.id}) {self.model.__dict__}"
-        self.assertEqual(str(self.model), expected_str)
-
-    def test_save_method(self):
-        """Test the save method of BaseModel."""
-        old_updated_at = self.model.updated_at
-        self.model.save()
-        self.assertNotEqual(old_updated_at, self.model.updated_at)
-
-    def test_to_dict_method(self):
-        """Test the to_dict method of BaseModel."""
-        expected_dict = {
-            'id': self.model.id,
-            'created_at': self.model.created_at.isoformat(),
-            'updated_at': self.model.updated_at.isoformat(),
-            '__class__': self.model.__class__.__name__
-        }
-        self.assertEqual(self.model.to_dict(), expected_dict)
-
-if __name__ == '__main__':
-    unittest.main()
+guillaume@ubuntu:~/AirBnB$ ./test_base_model.py
+[BaseModel] (b6a6e15c-c67d-4312-9a75-9d084935e579) {'my_number': 89, 'name': 'My First Model', 'updated_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119434), 'id': 'b6a6e15c-c67d-4312-9a75-9d084935e579', 'created_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)}
+[BaseModel] (b6a6e15c-c67d-4312-9a75-9d084935e579) {'my_number': 89, 'name': 'My First Model', 'updated_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119572), 'id': 'b6a6e15c-c67d-4312-9a75-9d084935e579', 'created_at': datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)}
+{'my_number': 89, 'name': 'My First Model', '__class__': 'BaseModel', 'updated_at': '2017-09-28T21:05:54.119572', 'id': 'b6a6e15c-c67d-4312-9a75-9d084935e579', 'created_at': '2017-09-28T21:05:54.119427'}
+JSON of my_model:
+    my_number: (<class 'int'>) - 89
+    name: (<class 'str'>) - My First Model
+    __class__: (<class 'str'>) - BaseModel
+    updated_at: (<class 'str'>) - 2017-09-28T21:05:54.119572
+    id: (<class 'str'>) - b6a6e15c-c67d-4312-9a75-9d084935e579
+    created_at: (<class 'str'>) - 2017-09-28T21:05:54.119427
