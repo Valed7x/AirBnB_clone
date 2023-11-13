@@ -60,6 +60,7 @@ class TestCity(unittest.TestCase):
     def test_state_id_attr(self):
         """
         Checking if City rocks the 'state_id' attribute,
+
         and it's an empty string
         """
         city_instance = City()
@@ -72,6 +73,7 @@ class TestCity(unittest.TestCase):
     def test_name_attr(self):
         """
         Ensuring City has the 'name' attribute,
+
         and it's an empty string
         """
         city_instance = City()
@@ -95,6 +97,7 @@ class TestCity(unittest.TestCase):
 class TestCityDocs(unittest.TestCase):
     """
     Tests to make sure the documentation and
+
     style of City class are on point
     """
 
@@ -108,7 +111,8 @@ class TestCityDocs(unittest.TestCase):
 
     def test_city_func_docstrings(self):
         """
-        Checking if City methods have the right
+        Checking if City methods have the righ
+
         amount of swag in their docstrings
         """
         for func in self.city_functions:

@@ -110,6 +110,7 @@ class TestReview(unittest.TestCase):
 class TestReviewDocs(unittest.TestCase):
     """
     Tests to make sure the documentation and
+
     style of Review class are on point
     """
 
@@ -124,6 +125,7 @@ class TestReviewDocs(unittest.TestCase):
     def test_review_func_docstrings(self):
         """
         Checking if Review methods have the
+
         right amount of swag in their docstrings
         """
         for func in self.review_functions:
@@ -136,7 +138,7 @@ class TestReviewDocs(unittest.TestCase):
 
     def test_review_class_docstring(self):
         """
-        Ensuring Review class has a proper docstring
+        Ensuring Review class has a proper docstring.
         """
         self.assertIsNot(Review.__doc__, None,
                          "Review class needs a docstring, my friend!")
@@ -145,7 +147,8 @@ class TestReviewDocs(unittest.TestCase):
 
     def test_review_module_docstring(self):
         """
-        Making sure review.py module is not missing out
+        Making sure review.py module is not missing out.
+
         on the docstring fun
         """
         self.assertIsNot(review.__doc__, None,
